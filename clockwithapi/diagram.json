@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -86.4,
+      "left": 62.44,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": 195.43, "left": -137.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 142.7, "left": 403, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:RS", "esp:4", "green", [ "v0" ] ],
+    [ "lcd1:E", "esp:17", "green", [ "v0" ] ],
+    [ "lcd1:D4", "esp:5", "green", [ "v0" ] ],
+    [ "lcd1:D5", "esp:18", "green", [ "v0" ] ],
+    [ "lcd1:D6", "esp:21", "green", [ "v0" ] ],
+    [ "lcd1:D7", "esp:22", "green", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v-144", "h-38.4" ] ],
+    [ "pot1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "lcd1:VDD", "esp:5V", "green", [ "v0" ] ],
+    [ "lcd1:VSS", "esp:GND.2", "green", [ "v-326.4", "h0", "v-96", "h268.8" ] ],
+    [ "lcd1:RW", "esp:GND.1", "green", [ "v-259.2", "h134.15" ] ],
+    [ "lcd1:K", "esp:GND.1", "green", [ "v0" ] ],
+    [ "lcd1:A", "esp:5V", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
